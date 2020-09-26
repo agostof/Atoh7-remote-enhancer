@@ -177,6 +177,9 @@ if __name__ == "__main__":
     # lowestAllowedVal = 9
     # lowestAllowedVal = 15
     # lowestAllowedVal = 'manual'
+    
+    # Minimum pixel intensity of any pixel in the image.
+    # It's set for background reduction
     lowestAllowedVal = 11
 
     minObjSizeRemovalRatio = 0.25
@@ -195,12 +198,22 @@ if __name__ == "__main__":
 
     adaptiveThresholdWindow = 121
 
-    minCellDiameterPre = 15
+    # The parameters: minCellDiameterPre/Post 
+    # should be set to the smallest cells that should 
+    # be counted. 
+    minCellDiameterPre = 10
     # minCellDiameterPost = [22,18,14,10,7]
-    minCellDiameterPost = [22,18,14,10]
-    maxCellDiameter = 50
+    # The array minCellDiameterPost contains multiple diameters 
+    # for which the code will search iteratively.
+    minCellDiameterPost = [22,18,14,10,8]
+    # Largest cells to count.
+    maxCellDiameter = 30
+    
+    # Mincellspacing is the minimum center-to-center spacing
+    # between cells.
+    # This value should be not be less than 1/2 minCellDiameterPre
     # minCellSpacing = 41
-    minCellSpacing = 37
+    minCellSpacing = 42
     #####################################
 
     #imgName,maskName,maskFullName = sys.argv[1],sys.argv[2],sys.argv[3]
